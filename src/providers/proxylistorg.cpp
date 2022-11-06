@@ -1,0 +1,3 @@
+class ProxyListOrg: public BaseProvider {
+
+}
