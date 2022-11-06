@@ -12,15 +12,18 @@ CFLAGS= -g -Wall -Werror
 
 .PHONY: all clean test
 
+.cc.o:
+	$(CC) $(CFLAGS) -c $<
+
 all: build
 
-build: apc.cpp
-	$(CC) $(CFLAGS) -o src/apc.o -c src/apc.cpp
-	$(CC) $(CFLAGS) -o build/apc src/apc.o 
-	
+build: src/apc.o
+	$(CC) $(CFLAGS) -o build/apc src/apc.o
 
 clean:
 	rm -f build/apc src/*.o
 
 test:
 
+run:
+	./build/apc
